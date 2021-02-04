@@ -1,6 +1,10 @@
-import { createApp } from 'vue'
+import { createApp }from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import bus from "@/common/bus";
 
-createApp(App).use(store).use(router).mount('#app')
+const mount = createApp(App);
+mount.use(store).use(router).mount('#app');
+
+mount.config.globalProperties.bus = bus
