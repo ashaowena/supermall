@@ -7,6 +7,9 @@ export function request(config) {
     timeout: 5000
   })
 
+  // 携带Cookie访问服务端
+  axios.defaults.withCredentials = true;
+
   // 2.axios的拦截器
   // 2.1.请求拦截的作用
   instance.interceptors.request.use(config => {
